@@ -10,7 +10,7 @@ spring:
           - Header=JR-Yamanote-Line
           - Host=tamachi
         - id: shinagawa
-          uri: https://shinagawa-dot-disco-ascent-223408.appspot.com
+          uri: http://shinagawa:8081
           predicates:
             - Method=GET
             - After=2020-03-14T00:00:00.000+09:00[Asia/Tokyo]
