@@ -16,3 +16,15 @@ spring:
             - After=2020-03-14T00:00:00.000+09:00[Asia/Tokyo]
             - Header=JR-Yamanote-Line
             - Host=shinagawa,**
+        - id: local
+          uri: http://localhost:8081
+          predicates:
+            - Host=local
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: resilience4j
+                fallbackUri: forward:/fallback
+    circuitbreaker:
+      resilience4j:
+        enabled: true
