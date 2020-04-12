@@ -25,6 +25,12 @@ spring:
               args:
                 name: resilience4j
                 fallbackUri: forward:/fallback
+        - id: local2
+          uri: http://localhost:8081
+          predicates:
+            - Host=local2
+          filters:
+            - CircuitBreaker=resilience4j
     circuitbreaker:
       resilience4j:
         enabled: true
